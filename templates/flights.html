@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flights</title>
+</head>
+
+<body>
+
+<h1>Flights</h1>
+
+<a href="/add">Add Flight</a>
+
+<br><br>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>ID</th>
+
+        <th>Flight</th>
+
+        <th>Airline</th>
+
+        <th>From Airport</th>
+
+        <th>To Airport</th>
+
+        <th>Price</th>
+
+        <th>Duration</th>
+
+        <th>Actions</th>
+    </tr>
+
+    {% for flight in flights %}
+
+    <tr>
+
+        <td>
+            {{ flight.id }}
+        </td>
+
+        <td>
+            {{ flight.flight_number }}
+        </td>
+
+        <td>
+            {{ flight.airline.name }}
+        </td>
+
+        <td>
+            {{ flight.departure_airport.code }}
+            -
+            {{ flight.departure_airport.city }}
+        </td>
+
+        <td>
+            {{ flight.arrival_airport.code }}
+            -
+            {{ flight.arrival_airport.city }}
+        </td>
+
+        <td>
+            {{ flight.price }}
+        </td>
+
+        <td>
+            {{ flight.duration }} min
+        </td>
+
+        <td>
+
+            <a href="/edit/{{ flight.id }}">
+                Edit
+            </a>
+
+            |
+
+            <a href="/delete/{{ flight.id }}">
+                Delete
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
