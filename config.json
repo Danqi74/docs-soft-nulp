@@ -1,0 +1,5 @@
+{
+  "output": "kafka",
+  "input": "csv",
+  "input_path": "data.csv"
+}
